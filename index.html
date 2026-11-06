@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>K Explore – Discover Events</title>
+<meta name="description" content="Browse, search and register for upcoming events.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a href="#home" class="logo">K<span>Explore</span></a>
+  <nav id="menu">
+    <a href="#home">Home</a><a href="#events">Events</a><a href="#my-regs">My Registrations</a>
+  </nav>
+  <div class="nav-actions">
+    <button id="themeBtn" aria-label="Toggle dark mode">🌙</button>
+    <button id="burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main>
+  <section id="home" class="hero">
+    <div class="hero-inner reveal">
+      <p class="eyebrow">Discover • Register • Experience</p>
+      <h1>Find events that <em>spark</em> your curiosity</h1>
+      <p class="sub">Hackathons, concerts, workshops and more — all in one place.</p>
+      <a href="#events" class="btn">Explore Events</a>
+      <div class="next" id="nextEvent"></div>
+    </div>
+  </section>
+
+  <section id="events" class="wrap">
+    <h2 class="reveal">Upcoming &amp; Featured Events</h2>
+    <div class="controls">
+      <input type="search" id="search" placeholder="🔍 Search events, venues…" aria-label="Search events">
+      <div id="filters" class="chips"></div>
+    </div>
+    <div id="grid" class="grid"></div>
+    <p id="empty" class="empty" hidden>No events match your search.</p>
+  </section>
+
+  <section id="my-regs" class="wrap">
+    <h2 class="reveal">My Registrations</h2>
+    <ul id="regList" class="reg-list"></ul>
+  </section>
+</main>
+
+<footer>© 2026 K Explore · Built with HTML, CSS &amp; JavaScript</footer>
+
+<div id="modal" class="modal" hidden>
+  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button class="close" id="closeBtn" aria-label="Close">✕</button>
+    <div id="mBanner" class="banner"></div>
+    <div class="dbody">
+      <h3 id="mTitle"></h3>
+      <p class="meta" id="mMeta"></p>
+      <p id="mDesc"></p>
+      <p class="count" id="mCount"></p>
+      <form id="form" novalidate>
+        <h4>Register</h4>
+        <label>Full Name<input id="name" autocomplete="name"><small></small></label>
+        <label>Email<input id="email" type="email" autocomplete="email"><small></small></label>
+        <label>Phone<input id="phone" type="tel" autocomplete="tel" placeholder="10-digit number"><small></small></label>
+        <label>Event<select id="eventSel"></select><small></small></label>
+        <button class="btn" type="submit">Register Now</button>
+      </form>
+      <div id="confirm" class="confirm" hidden></div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
